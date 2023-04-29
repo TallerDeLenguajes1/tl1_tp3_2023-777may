@@ -77,6 +77,7 @@ void cargarClientes(Cliente *clientes, int cantClientes, char **tipoProd)
     {
         clientes[i].ClienteID = i;
         printf("\nIngrese el nombre del cliente nro %d:\n", i+1);
+        fflush(stdin);
         scanf("%s", nombreIngresado); 
         clientes[i].NombreCliente = malloc(sizeof(char)*(strlen(nombreIngresado)+1));
         strcpy(clientes[i].NombreCliente, nombreIngresado);
