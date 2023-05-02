@@ -49,7 +49,10 @@ void liberarArreglo(char ***listaNombres, int cantNombres)
 {//libera la memoria
     for (int i = 0; i<cantNombres; i++)
     {
-        free(*(listaNombres[i]));
+        //lección aprendida: listaNombres[i] != *listaNombres+i 
+        // printf("\nLN+i %d \n", *listaNombres+i);   
+        // printf("\nLN+i d %d  s %s \n", (*listaNombres)[i], *(*listaNombres+i));
+        free((*listaNombres)[i]);
     }
-    free(listaNombres);
+    free(*listaNombres);
 }

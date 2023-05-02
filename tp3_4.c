@@ -90,7 +90,7 @@ void cargarClientes(Cliente *clientes, int cantClientes, char **tipoProd)
 void cargarProductos(Cliente cliente_i, char **tipoProd)
 {//carga los productos del cliente brindado y selecciona los nombres de producto del arreglo 
     int tipoProductoAlAzar;
-    char *nombreProd = malloc(sizeof(char)*100);
+    char *nombreProd;
     for (int j = 0; j < cliente_i.CantidadProductosAPedir; j++)
     {
         tipoProductoAlAzar = rand()%5;
@@ -99,9 +99,8 @@ void cargarProductos(Cliente cliente_i, char **tipoProd)
         nombreProd = tipoProd[tipoProductoAlAzar];
         cliente_i.Productos[j].TipoProducto = malloc(sizeof(char)*(strlen(nombreProd)+1));
         strcpy(cliente_i.Productos[j].TipoProducto, nombreProd);
-        cliente_i.Productos[j].PrecioUnitario = 10 + rand()% 100-10+1 ;
+        cliente_i.Productos[j].PrecioUnitario = 10 + rand()% 91 ;
     }
-    free(nombreProd);
 }
 
 void mostrarTodo(Cliente *clientes, int cantClientes)
