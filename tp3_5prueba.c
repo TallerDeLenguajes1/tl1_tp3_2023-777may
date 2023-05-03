@@ -21,11 +21,11 @@ void main(){
     }
     free(nombre);    
     
-    for (int i = 0; i<5; i++){
+    for (int i = 0; i<cant; i++){
         printf("\nEl %d nombre es: %s", i+1, nombres[i]);
     }
 
-    for (int i = 0; i<5; i++){
+    for (int i = 0; i<cant; i++){
         free(nombres[i]);
     }
 }
